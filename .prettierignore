@@ -1,0 +1,7 @@
+.venv
+.tools
+reference
+api-reference.html
+frontend/node_modules
+frontend/dist
+frontend/package-lock.json

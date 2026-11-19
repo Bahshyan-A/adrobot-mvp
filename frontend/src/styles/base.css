@@ -1,0 +1,342 @@
+:root {
+  font-family: 'Golos Text', Arial, sans-serif;
+  font-size: 16px;
+  font-synthesis: none;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--background);
+  --primary: #24734f;
+  --primary-hover: #19583b;
+  --primary-soft: #edf5ef;
+  --primary-border: #c9dfd0;
+  --text: #203329;
+  --muted: #64736a;
+  --subtle: #67766b;
+  --background: #f5f7f5;
+  --surface: #ffffff;
+  --surface-muted: #f8faf8;
+  --border: #dfe6e0;
+  --border-strong: #7f9386;
+  --amber: #8a5c13;
+  --amber-soft: #fff9eb;
+  --amber-border: #ead7ab;
+  --danger: #b03f38;
+  --danger-soft: #fff3f1;
+  --radius: 12px;
+  --sidebar-width: 212px;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+button,
+a,
+input,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+button,
+a {
+  touch-action: manipulation;
+}
+button {
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  transition:
+    background 150ms,
+    color 150ms,
+    border-color 150ms;
+}
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+svg {
+  flex-shrink: 0;
+  stroke-width: 1.8;
+}
+button svg,
+a svg {
+  pointer-events: none;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #78ae8c;
+  outline-offset: 3px;
+}
+input,
+select {
+  width: 100%;
+  height: 44px;
+  padding: 0 13px;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 14px;
+  transition:
+    border-color 150ms,
+    box-shadow 150ms;
+}
+input::placeholder {
+  color: var(--subtle);
+}
+input:hover,
+select:hover {
+  border-color: #91aa99;
+}
+input:focus,
+select:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgb(36 115 79 / 10%);
+}
+input:disabled,
+select:disabled {
+  background: var(--surface-muted);
+}
+input[type='number'] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+label {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 14px;
+  font-weight: 500;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+h1 {
+  font-size: 30px;
+  font-weight: 650;
+  letter-spacing: -0.9px;
+  line-height: 1.3;
+}
+h2 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.35px;
+}
+h3 {
+  font-size: 16px;
+  font-weight: 550;
+}
+p {
+  line-height: 1.7;
+}
+.muted {
+  color: var(--muted);
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.panel {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.button {
+  display: inline-flex;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 15px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+.button.primary {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 2px 2px rgb(25 88 59 / 6%);
+}
+.button.primary:hover:not(:disabled) {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+.button.secondary {
+  background: var(--surface);
+  border-color: var(--border);
+  color: #435c4c;
+}
+.button.secondary:hover:not(:disabled) {
+  background: var(--surface-muted);
+  border-color: #acc4b3;
+}
+.button.quiet {
+  color: var(--amber);
+  border-color: var(--amber-border);
+  background: #fffdf7;
+}
+.button.quiet:hover:not(:disabled) {
+  background: #f7eed7;
+}
+.text-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 32px;
+  padding: 0;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 500;
+}
+.text-button:hover:not(:disabled) {
+  color: var(--primary-hover);
+}
+.muted-button {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 400;
+}
+.icon-button {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  padding: 0;
+  border-radius: 7px;
+  color: var(--muted);
+}
+.icon-button:hover:not(:disabled) {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 9px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 450;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.badge.neutral {
+  background: #f0f3f0;
+  color: #627168;
+}
+.badge.green,
+.badge.accent {
+  color: var(--primary);
+  background: var(--primary-soft);
+}
+.badge.amber {
+  background: #fcf0d4;
+  color: var(--amber);
+}
+.badge.danger {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+.counter {
+  display: inline-grid;
+  min-width: 24px;
+  height: 24px;
+  place-items: center;
+  padding: 0 6px;
+  border-radius: 6px;
+  background: #eef2ee;
+  color: #65786b;
+  font-size: 12px;
+  font-weight: 450;
+}
+.status-dot {
+  width: 6px;
+  height: 6px;
+  display: inline-block;
+  border-radius: 50%;
+  background: var(--primary);
+  flex-shrink: 0;
+}
+.input-icon {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.input-icon > svg:first-child {
+  position: absolute;
+  left: 13px;
+  pointer-events: none;
+  color: var(--subtle);
+}
+.input-icon > input {
+  padding-left: 39px;
+}
+.input-icon .trailing {
+  position: absolute;
+  right: 5px;
+}
+.input-icon > input:has(~ .trailing) {
+  padding-right: 42px;
+}
+.error-text {
+  color: var(--danger) !important;
+}
+.error-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  border: 1px solid #edd0cb;
+  border-radius: 8px;
+  background: var(--danger-soft);
+  color: var(--danger);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.error-banner .icon-button {
+  margin-left: auto;
+  color: var(--danger);
+}
+.spin {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
